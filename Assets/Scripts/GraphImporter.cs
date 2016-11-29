@@ -27,24 +27,37 @@ public class GraphImporter : MonoBehaviour
 	{
 		Graph graph = Graph.instance;
 		char[] archdelim = new char[]{ '\r', '\n' };
-		string[] table = miserablesNodes.text.Split (archdelim);
-		foreach (string line in table) {
+		string[] tableNodes = miserablesNodes.text.Split (archdelim);
+		string[] tableEdges = miserablesEdges.text.Split (archdelim);
+
+		foreach (string line in tableNodes) {
 
 			var values = line.Split (',');
 			if (values.Length > 0) {
 				int parseResult;
 				if (int.TryParse (values [0], out parseResult)) {
-					Debug.Log ("Import " + line);
 					Node.CreateNode (graph, parseResult, values [1]);
 				}
 			}
 		}
 
-//		table = miserablesEdges.text.Split (archdelim);
-//		foreach (string line in table) {
-//			var values = line.Split (',');
-//			Edge.CreateEdge (values [0], values [1]);
-//
-//		}
+		foreach (string line in tableEdges) {
+			var values = line.Split (',');
+			if (values.Length > 1) {
+				float parseWeight;
+				if (float.TryParse (values [2], out parseWeight)) {
+					Edge.CreateEdge (graph, FindNode (graph, values [0]), FindNode (graph, values [1]), parseWeight);
+				}
+			}
+		}
+	}
+
+	public Node FindNode (Graph graph, string searchID)
+	{
+		int parseResult;
+		if (int.TryParse (searchID, out parseResult))
+			return graph.nodes.Find (x => x.id == parseResult);
+		else
+			return null;
 	}
 }

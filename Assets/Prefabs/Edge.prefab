@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 120000012233383056}
+  graph: {fileID: 0}
   node1: {fileID: 0}
   node2: {fileID: 0}
   weight: 0
@@ -89,8 +90,8 @@ LineRenderer:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
   m_Parameters:
-    startWidth: 1
-    endWidth: 1
+    startWidth: 0.01
+    endWidth: 0.01
     m_StartColor:
       serializedVersion: 2
       rgba: 4294967295
