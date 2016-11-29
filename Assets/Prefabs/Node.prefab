@@ -24,7 +24,7 @@ GameObject:
   - 23: {fileID: 23000011720325390}
   - 114: {fileID: 114000011606383674}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Node
   m_TagString: Node
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,6 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rend: {fileID: 23000011720325390}
   graph: {fileID: 0}
+  id: 0
   namefield: {fileID: 0}
   ready: 0
   hidden: 0
