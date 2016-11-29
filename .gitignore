@@ -1,7 +1,36 @@
-VR Force Directed Graph/Library/*
-VR Force Directed Graph/.DS_Store
-VR Force Directed Graph/Assembly-CSharp-Editor.csproj
-VR Force Directed Graph/Assembly-CSharp.csproj
-VR Force Directed Graph/Temp/*
-VR Force Directed Graph/VR Force Directed Graph.sln
-DS_Store
+.DS_Store
+# =============== #
+# Unity generated #
+# =============== #
+VR\ Force\ Directed\ Graph/[Tt]emp/
+VR\ Force\ Directed\ Graph/[Oo]bj/
+VR\ Force\ Directed\ Graph/[Bb]uild
+VR\ Force\ Directed\ Graph/[Ll]ibrary/
+sysinfo.txt
+*.stackdump
+ 
+# ============================================= #
+# Visual Studio / MonoDevelop / Rider generated #
+# ============================================= #
+[Ee]xported[Oo]bj/
+.vs/
+/*.userprefs
+/*.csproj
+/*.pidb
+/*.suo
+/*.sln*
+/*.user
+/*.unityproj
+/*.booproj
+/.idea*/
+ 
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store*
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+[Tt]humbs.db
+[Dd]esktop.ini
