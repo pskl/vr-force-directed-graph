@@ -50,6 +50,11 @@ public class GraphImporter : MonoBehaviour
 				}
 			}
 		}
+
+
+		foreach (Node n in graph.nodes) {
+			n.RefreshRepulsionList ();
+		}
 	}
 
 	public Node FindNode (Graph graph, string searchID)

@@ -622,9 +622,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   repulsion: 1
-  attraction: 0.1
+  attraction: 0.2
   springLength: 0.01
-  damping: 0.001
+  damping: 0.002
   nodes: []
   edges: []
 --- !u!4 &633700951
@@ -635,7 +635,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 633700949}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.43, y: 1, z: -1.841}
+  m_LocalPosition: {x: -2.05, y: 1.5, z: -1.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
