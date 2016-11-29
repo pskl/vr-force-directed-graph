@@ -87,12 +87,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000014285389262}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba27cc55a44737a4da6eada9d39dec63, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c42019bbc536864db2cfcfb5cb9ea0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 0}
+  rend: {fileID: 23000011720325390}
   graph: {fileID: 0}
   namefield: {fileID: 0}
+  ready: 0
   hidden: 0
   hideconnections: 0
   dontRepel: 0
