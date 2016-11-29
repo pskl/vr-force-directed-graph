@@ -2,10 +2,10 @@
 # =============== #
 # Unity generated #
 # =============== #
-VR\ Force\ Directed\ Graph/[Tt]emp/
-VR\ Force\ Directed\ Graph/[Oo]bj/
-VR\ Force\ Directed\ Graph/[Bb]uild
-VR\ Force\ Directed\ Graph/[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Ll]ibrary/
 sysinfo.txt
 *.stackdump
  
