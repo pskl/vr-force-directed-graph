@@ -10,6 +10,8 @@ public class ViveGrab : MonoBehaviour {
     SteamVR_TrackedObject trackedObj;
     FixedJoint joint;
 
+    bool getColObj = false;
+
     void Awake()
     {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
@@ -24,29 +26,36 @@ public class ViveGrab : MonoBehaviour {
 	
 	void Update ()
     {
-        if (colNode != null)
+        if (grabbedObj != null)
         {
-            print("setPosition");
-            colNode.transform.position = transform.position;
+           // print("setPosition");
+            grabbedObj.transform.position = transform.position;
         }
         var device = SteamVR_Controller.Input((int)trackedObj.index);
         if (device.GetTouchUp(SteamVR_Controller.ButtonMask.Trigger))
         {
-            print("trigegerUp");
-            colNode = null;
+            //print("trigegerUp");
+            grabbedObj = null;
         }
+
+        if (device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger))
+        {
+           // print("triggerDown");
+            getColObj = true;
+        }
+        else
+            getColObj = false;
     }
 
     private void OnTriggerStay(Collider c)
     {
-
-        print("triggerIsEneter");
-        var device = SteamVR_Controller.Input((int)trackedObj.index);
-        if (device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger))
+        //print("collision detect");
+        //print(getColObj);
+        if (getColObj && grabbedObj == null)
         {
-            print("triggerDown");
-            colNode = c.GetComponent<Node>();
-        }
+            //print("SetGrabObj");
+            grabbedObj = c.gameObject;
+        }        
     }
 
     
