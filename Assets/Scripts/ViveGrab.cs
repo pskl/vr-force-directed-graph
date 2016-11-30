@@ -30,6 +30,12 @@ public class ViveGrab : MonoBehaviour {
         {
            // print("setPosition");
             grabbedObj.transform.position = transform.position;
+            if (grabbedObj.GetComponent<MateralChange>() != null)
+            {
+                print("color change");
+                MateralChange matchange = grabbedObj.GetComponent<MateralChange>();
+                matchange.ChangeTheColor();
+            }
         }
         var device = SteamVR_Controller.Input((int)trackedObj.index);
         if (device.GetTouchUp(SteamVR_Controller.ButtonMask.Trigger))
@@ -45,6 +51,8 @@ public class ViveGrab : MonoBehaviour {
         }
         else
             getColObj = false;
+
+       
     }
 
     private void OnTriggerStay(Collider c)
@@ -56,7 +64,9 @@ public class ViveGrab : MonoBehaviour {
             //print("SetGrabObj");
             if (c.GetComponent<Node>())
                 grabbedObj = c.gameObject;
-        }        
+        }
+
+             
     }
 
     
