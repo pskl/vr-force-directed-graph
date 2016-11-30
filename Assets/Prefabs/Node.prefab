@@ -143,18 +143,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c42019bbc536864db2cfcfb5cb9ea0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 23000011720325390}
   graph: {fileID: 0}
   id: 0
   namefield: {fileID: 114000010201583252}
-  ready: 0
+  calculate: 0
   hidden: 0
   hideconnections: 0
   dontRepel: 0
-  toBeDestroyed: 0
+  savedPosition: {x: 0, y: 0, z: 0}
+  velocity: {x: 0, y: 0, z: 0}
   repulsionlist: []
   attractionlist: []
-  velocity: {x: 0, y: 0, z: 0}
 --- !u!135 &135000013488835676
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -165,7 +164,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!222 &222000012512182060
 CanvasRenderer:
