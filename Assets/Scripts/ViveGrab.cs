@@ -54,7 +54,8 @@ public class ViveGrab : MonoBehaviour {
         if (getColObj && grabbedObj == null)
         {
             //print("SetGrabObj");
-            grabbedObj = c.gameObject;
+            if (c.GetComponent<Node>())
+                grabbedObj = c.gameObject;
         }        
     }
 

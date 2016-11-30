@@ -23,7 +23,7 @@ GameObject:
   - 114: {fileID: 114000014025051406}
   m_Layer: 0
   m_Name: Edge
-  m_TagString: Untagged
+  m_TagString: Edge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,7 +52,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34cf5bcd297e071469cb9f862469112d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 120000012233383056}
   graph: {fileID: 0}
   node1: {fileID: 0}
   node2: {fileID: 0}
@@ -70,7 +69,7 @@ LineRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f48c90dc3ffd6e744adff44c4048a07d, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -90,8 +89,8 @@ LineRenderer:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
   m_Parameters:
-    startWidth: 0.002
-    endWidth: 0.002
+    startWidth: 0.001
+    endWidth: 0.001
     m_StartColor:
       serializedVersion: 2
       rgba: 4294967295
