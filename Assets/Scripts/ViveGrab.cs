@@ -33,8 +33,10 @@ public class ViveGrab : MonoBehaviour {
             if (grabbedObj.GetComponent<MateralChange>() != null)
             {
                 print("color change");
+
                 MateralChange matchange = grabbedObj.GetComponent<MateralChange>();
-                matchange.ChangeTheColor();
+                grabbedObj.GetComponent<Node>().ChangeColors();
+              
             }
         }
         var device = SteamVR_Controller.Input((int)trackedObj.index);

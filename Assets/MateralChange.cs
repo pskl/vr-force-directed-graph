@@ -16,13 +16,7 @@ public class MateralChange : MonoBehaviour {
         myLight.color = startColor;
     }
 
-    public void ChangeTheColor()
-    {
-        print("change color");
-        nodeRenderer.material.SetColor("_RimColor", selectColor);
-        nodeRenderer.material.SetColor("_Color", selectColor);
-        myLight.color = selectColor;
-    }
+
 
     // Update is called once per frame
     void Update()
