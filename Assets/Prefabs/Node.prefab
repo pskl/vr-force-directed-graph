@@ -109,7 +109,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 7
   m_Type: 2
-  m_Color: {r: 0.8259635, g: 1, b: 0.029411793, a: 0.884}
+  m_Color: {r: 0.02745098, g: 0.92941177, b: 0.96862745, a: 1}
   m_Intensity: 0.88
   m_Range: 0.036
   m_SpotAngle: 30
@@ -198,6 +198,8 @@ MonoBehaviour:
   id: 0
   namefield: {fileID: 114000010201583252}
   calculate: 0
+  infected: 0
+  timeOfInfection: 0
   highlighted: 0
   changingColor: 0
   hidden: 0
