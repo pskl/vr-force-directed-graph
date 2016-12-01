@@ -56,9 +56,9 @@ namespace VRTK
 				RaycastHit pointerCollidedWith;
 				var rayHit = Physics.Raycast (pointerRaycast, out pointerCollidedWith, pointerLength, ~layersToIgnore);
 
-				if (pointerCollidedWith.collider && pointerCollidedWith.collider.gameObject.GetComponent<Node> ()) {
-					pointerCollidedWith.collider.gameObject.GetComponent<Node> ().Hit ();
-				}
+//				if (pointerCollidedWith.collider && pointerCollidedWith.collider.gameObject.GetComponent<Node> ()) {
+//					pointerCollidedWith.collider.gameObject.GetComponent<Node> ().Hit ();
+//				}
 
 				var pointerBeamLength = GetPointerBeamLength (rayHit, pointerCollidedWith);
 				SetPointerTransform (pointerBeamLength, pointerThickness);

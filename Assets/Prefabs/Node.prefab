@@ -43,8 +43,6 @@ GameObject:
   - 23: {fileID: 23000011720325390}
   - 114: {fileID: 114000011606383674}
   - 108: {fileID: 108000011535668952}
-  - 114: {fileID: 114000012114594150}
-  - 114: {fileID: 114000013077930840}
   m_Layer: 0
   m_Name: Node
   m_TagString: Node
@@ -200,6 +198,8 @@ MonoBehaviour:
   id: 0
   namefield: {fileID: 114000010201583252}
   calculate: 0
+  highlighted: 0
+  changingColor: 0
   hidden: 0
   hideconnections: 0
   dontRepel: 0
@@ -208,6 +208,7 @@ MonoBehaviour:
   throwVelocity: {x: 0, y: 0, z: 0}
   repulsionlist: []
   attractionlist: []
+  grabbedBy: {fileID: 0}
 --- !u!114 &114000011923204594
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -220,30 +221,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myCam: {fileID: 0}
---- !u!114 &114000012114594150
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014285389262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a75a50f5a2330c143bf7c5341b92f014, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startColor: {r: 0, g: 0.8669877, b: 0.9044118, a: 1}
-  selectColor: {r: 0.38276172, g: 0.06487889, b: 0.5514706, a: 1}
---- !u!114 &114000013077930840
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014285389262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!135 &135000013488835676
 SphereCollider:
   m_ObjectHideFlags: 1
