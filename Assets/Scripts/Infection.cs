@@ -27,7 +27,10 @@ public class Infection : MonoBehaviour {
 
         List<Node> possibleNodes = graph.nodes.FindAll(x => x.attractionlist.Count == firstnode.attractionlist.Count).ToList();
 
-        possibleNodes[Random.Range(0, possibleNodes.Count - 1)].FixedInfection();
+        Node infectionCandidate = possibleNodes[Random.Range(0, possibleNodes.Count - 1)];
+        infectionCandidate.FixedInfection();
+
+
     }
     
 }

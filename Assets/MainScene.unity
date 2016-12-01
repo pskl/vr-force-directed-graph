@@ -275,6 +275,8 @@ MonoBehaviour:
   materialInfected: {fileID: 2100000, guid: a94cf702625bd2f48bf4c92af96926d9, type: 2}
   materialEndangered: {fileID: 2100000, guid: 32baffe8c0b740d4aac318c69d3d11f5, type: 2}
   materialImmune: {fileID: 2100000, guid: 50fca4346e44c804d951e17d7566038a, type: 2}
+  materialEvil: {fileID: 2100000, guid: bd78b67ea42228848a4c08be79a97e5c, type: 2}
+  materialEvilMaster: {fileID: 2100000, guid: 451b559a06f26264186f02f5bd1020a6, type: 2}
   lightColorStandard: {r: 0, g: 0, b: 0, a: 0}
   lightColorHighlighted: {r: 0, g: 0, b: 0, a: 0}
   center: {fileID: 1383499143}
@@ -283,6 +285,12 @@ MonoBehaviour:
   springLength: 0.05
   damping: 0.005
   nodes: []
+  infectedNodes: []
+  evilNodes: []
+  evilMaster: {fileID: 0}
+  masterSpeed: 0.2
+  gameOver: 0
+  gameOverThreshold: 0.1
   edges: []
 --- !u!224 &72550742
 RectTransform:
@@ -528,7 +536,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 424470188}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!43 &487801151
+--- !u!43 &825524421
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -656,35 +664,6 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
---- !u!21 &1014969175
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  m_SavedProperties:
-    serializedVersion: 2
-    m_TexEnvs:
-    - first:
-        name: _MainTex
-      second:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - first:
-        name: PixelSnap
-      second: 0
-    m_Colors:
-    - first:
-        name: _Color
-      second: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1270810976
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,6 +788,35 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1270810976}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &1281972435
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - first:
+        name: PixelSnap
+      second: 0
+    m_Colors:
+    - first:
+        name: _Color
+      second: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1312097554
 Prefab:
   m_ObjectHideFlags: 0
@@ -851,7 +859,7 @@ Prefab:
     - target: {fileID: 3380982, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 487801151}
+      objectReference: {fileID: 825524421}
     - target: {fileID: 11489174, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
       propertyPath: drawInGame
       value: 0
@@ -927,7 +935,7 @@ Prefab:
     - target: {fileID: 2348914, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1014969175}
+      objectReference: {fileID: 1281972435}
     - target: {fileID: 2082592, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
       propertyPath: near clip plane
       value: 0.01
@@ -1275,7 +1283,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.07
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1312097572
 Rigidbody:
@@ -1315,7 +1323,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.07
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1312097575
 Rigidbody:
