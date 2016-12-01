@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.000018769262, g: 0.000000035216942, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.000018769242, g: 0.000000035216942, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -261,6 +261,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftController: {fileID: 1312097583}
   rightController: {fileID: 1312097581}
+  materialStandard: {fileID: 2100000, guid: 8decc5db868442447aac43b7c7da296b, type: 2}
+  materialHighlighted: {fileID: 2100000, guid: 28d380faabce4ee41ab57fac3680b4e0, type: 2}
   center: {fileID: 1383499143}
   repulsion: 1
   attraction: 1
@@ -1147,6 +1149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3aac807c5f46304598cd5f2f50e80de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grabbedObj: {fileID: 0}
 --- !u!135 &1312097574
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1185,6 +1188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3aac807c5f46304598cd5f2f50e80de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grabbedObj: {fileID: 0}
 --- !u!114 &1312097581 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11463128, guid: 4d293c8e162f3874b982baadd71153d2,
