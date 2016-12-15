@@ -13,5 +13,14 @@ Display and interact with [force directed graphs](https://en.wikipedia.org/wiki/
 - node + associated edges highligthing
 - full graph rotation and translation
 - cool neon materials
+- game feature prototype: start infections in random locations on the graph, user must then try to stop it by ripping apart sick nodes
 
-Warning: project was developed during a hackathon, code quality is below 0.Use at your own risk.
+## TODO
+
+- polish game features
+- generic data importer
+
+![alt tag](https://raw.githubusercontent.com/pskl/vr-force-directed-graph/Assets/Screenshots/picture.jpg)
+
+Warning: project was developed during a hackathon, code quality was not the main concern. 
+
