@@ -4,6 +4,7 @@ using System.Collections;
 public class GraphImporter : MonoBehaviour
 {
 	public static GraphImporter instance;
+    public Graph graph;
 	public TextAsset miserables;
 	public TextAsset miserablesEdges;
 	public TextAsset miserablesNodes;
@@ -14,18 +15,12 @@ public class GraphImporter : MonoBehaviour
 	public void Awake ()
 	{
 		instance = this;
-	}
-
-	// Use this for initialization
-	void Start ()
-	{
-		Import ();
-	}
+        Import();
+    }
 
 
 	public void Import ()
 	{
-		Graph graph = Graph.instance;
 		char[] archdelim = new char[]{ '\r', '\n' };
 		string[] tableNodes = miserablesNodes.text.Split (archdelim);
 		string[] tableEdges = miserablesEdges.text.Split (archdelim);
@@ -50,7 +45,6 @@ public class GraphImporter : MonoBehaviour
 				}
 			}
 		}
-
 
 		foreach (Node n in graph.nodes) {
 			n.RefreshRepulsionList ();

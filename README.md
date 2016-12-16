@@ -20,7 +20,7 @@ Display and interact with [force directed graphs](https://en.wikipedia.org/wiki/
 - polish game features
 - generic data importer
 
-![alt tag](https://raw.githubusercontent.com/pskl/vr-force-directed-graph/Assets/Screenshots/picture.jpg)
+![alt tag](https://raw.githubusercontent.com/pskl/vr-force-directed-graph/master/Assets/Screenshots/picture.jpg)
 
 Warning: project was developed during a hackathon, code quality was not the main concern. 
 
