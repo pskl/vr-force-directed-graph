@@ -3,15 +3,17 @@ using System.Collections;
 
 public class LookAtCam : MonoBehaviour {
 
-    public Transform myCam;
+    public Camera mainCamera;
 
 	// Use this for initialization
 	void Start () {
-        myCam = GameObject.Find("Camera (eye)").transform;
+        mainCamera = Camera.main ;
     }
 	
 	// Update is called once per frame
 	void LateUpdate () {
-        transform.rotation = Quaternion.LookRotation(transform.position - myCam.position);
+        transform.rotation = Quaternion.LookRotation(
+			transform.position - mainCamera.transform.position
+		);
 	}
 }
