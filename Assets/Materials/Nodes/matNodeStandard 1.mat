@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: materialHighlighted
+  m_Name: matNodeStandard 1
   m_Shader: {fileID: 4800000, guid: bea1129d02637fd489c76e5b9c373d21, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -39,7 +39,7 @@ Material:
     - _RimPower: 5
     m_Colors:
     - _Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 0.172}
-    - _MKGlowColor: {r: 1, g: 0.5372549, b: 0, a: 1}
-    - _MKGlowTexColor: {r: 1, g: 0.5372549, b: 0, a: 1}
+    - _MKGlowColor: {r: 0.8235294, g: 0.9780933, b: 1, a: 1}
+    - _MKGlowTexColor: {r: 0.0072448165, g: 0.90435207, b: 0.9852941, a: 1}
     - _OutlineColor: {r: 1, g: 0, b: 0, a: 1}
-    - _RimColor: {r: 1, g: 0.541, b: 0, a: 1}
+    - _RimColor: {r: 0.02854674, g: 0.9316068, b: 0.9705882, a: 1}

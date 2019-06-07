@@ -220,13 +220,13 @@ MonoBehaviour:
   repulsionlist: []
   attractionlist: []
   connectedNodes: []
-  materialStandard: {fileID: 0}
-  materialHighlighted: {fileID: 0}
-  materialInfected: {fileID: 0}
-  materialEndangered: {fileID: 0}
-  materialImmune: {fileID: 0}
-  materialEvil: {fileID: 0}
-  materialEvilMaster: {fileID: 0}
+  materialStandard: {fileID: 2100000, guid: 8decc5db868442447aac43b7c7da296b, type: 2}
+  materialHighlighted: {fileID: 2100000, guid: 8decc5db868442447aac43b7c7da296b, type: 2}
+  materialInfected: {fileID: 2100000, guid: a94cf702625bd2f48bf4c92af96926d9, type: 2}
+  materialEndangered: {fileID: 2100000, guid: 32baffe8c0b740d4aac318c69d3d11f5, type: 2}
+  materialImmune: {fileID: 2100000, guid: 50fca4346e44c804d951e17d7566038a, type: 2}
+  materialEvil: {fileID: 2100000, guid: bd78b67ea42228848a4c08be79a97e5c, type: 2}
+  materialEvilMaster: {fileID: 2100000, guid: 451b559a06f26264186f02f5bd1020a6, type: 2}
 --- !u!108 &108000011535668952
 Light:
   m_ObjectHideFlags: 0
