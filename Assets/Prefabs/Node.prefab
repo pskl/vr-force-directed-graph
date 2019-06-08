@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 65
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!224 &224000013316515134
 RectTransform:
@@ -114,7 +114,7 @@ GameObject:
   m_TagString: Node
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 65
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4000012410514570
 Transform:
@@ -124,7 +124,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000014285389262}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.046, y: 3.939, z: -1.896}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
   m_Children:
   - {fileID: 224000013316515134}
@@ -150,7 +150,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.2
+  m_Radius: 0.03
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &23000011720325390
 MeshRenderer:
@@ -169,7 +169,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8decc5db868442447aac43b7c7da296b, type: 2}
+  - {fileID: 2100000, guid: 8cf2b9d034bbeda4583b96aa32d73f54, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -210,10 +210,8 @@ MonoBehaviour:
   infected: 0
   endangered: 0
   timeOfInfection: 0
-  changingColor: 0
   hideconnections: 0
   dontRepel: 0
-  savedPosition: {x: 0, y: 0, z: 0}
   forceVelocity: {x: 0, y: 0, z: 0}
   masterVelocity: {x: 0, y: 0, z: 0}
   throwVelocity: {x: 0, y: 0, z: 0}

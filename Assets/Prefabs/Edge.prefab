@@ -155,7 +155,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 120000012233383056}
   node1: {fileID: 0}
   node2: {fileID: 0}
-  weight: 0
+  weight: 1
   endangered: 0
   infected: 0
   straining: 0

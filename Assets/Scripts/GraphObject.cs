@@ -11,7 +11,7 @@ public abstract class GraphObject : MonoBehaviour,
     public Graph graph;
     public bool hidden;
     public bool highlighted;
-    
+
     public virtual void Hide()
     {
 		hidden = true;
@@ -71,4 +71,9 @@ public abstract class GraphObject : MonoBehaviour,
 	}
 
 	#endregion events
+
+    public virtual void OnDestroy()
+    {
+        
+    }
 }

@@ -7,11 +7,11 @@ using System.Linq;
 public class InfectionManager : MonoBehaviour
 {
     public Graph graph;
+    public GameObject infectionPrefab;
     
     public int incubation;
-    public float infectionChance;
 
-    public List<Node> infectedNodes = new List<Node>();
+    public List<Infection> infections = new List<Infection>();
     public List<Node> evilNodes = new List<Node>();
 
     public Node evilMaster;
@@ -21,27 +21,42 @@ public class InfectionManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Return))
         {
-            CreateInfection();
+            RandomInfection();
         }
 
-        foreach(Node node in infectedNodes)
+        foreach(Infection infection in infections)
         {
-            node.InfectOthers();
+            infection.InfectionImpulse();
         }
-
-        CheckForGameOver();
     }
 
-    public void CreateInfection()
+    public void RandomInfection()
     {
-        graph.nodes = graph.nodes.OrderBy(x => x.attractionlist.Count).ToList();
         Node firstnode = graph.nodes.First();
 
-        List<Node> possibleNodes = graph.nodes.FindAll(x => x.attractionlist.Count == firstnode.attractionlist.Count).ToList();
+        List<Node> possibleNodes = graph.nodes.
+            OrderBy(x => x.attractionlist.Count).
+            Where(x => x.attractionlist.Count == firstnode.attractionlist.Count).
+            ToList();
 
         Node infectionCandidate = possibleNodes[Random.Range(0, possibleNodes.Count - 1)];
         infectionCandidate.BecomeInfected();
+    }
 
+    public Infection InstantiateInfection(Node node, float time)
+    {
+        GameObject newInfectionGO = GameObject.Instantiate(infectionPrefab) as GameObject;
+        newInfectionGO.transform.SetParent(node.transform);
+        Infection newInfection = newInfectionGO.GetComponent<Infection>();
+        newInfection.infectionManager = this;
+
+        newInfection.node = node;
+        node.infection = newInfection;
+        newInfection.timeOfInfection = time;
+
+        infections.Add(newInfection);
+
+        return newInfection;
     }
 
     public void AddToEvilNodes(Node node)
@@ -58,21 +73,6 @@ public class InfectionManager : MonoBehaviour
         }
 
         evilNodes.Add(node);
-    }
-
-    public void CheckForGameOver()
-    {
-        if (infectedNodes.Count > 0)
-        {
-            foreach(Node healthyNode in graph.nodes)
-            {
-                if (Vector3.Distance(healthyNode.transform.position, 
-                infectedNodes.First().transform.position) < graph.gameOverThreshold && !graph.gameOver)
-                {
-                    graph.GameOver();
-                }
-            }
-        }
     }
 
 
