@@ -75,13 +75,22 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.015
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.001
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.49704146
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -90,7 +99,7 @@ LineRenderer:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 0.001
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -155,9 +164,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 120000012233383056}
   node1: {fileID: 0}
   node2: {fileID: 0}
-  weight: 0
-  endangered: 0
-  infected: 0
+  weight: 1
   straining: 0
   nodrag: 0
   materialStandard: {fileID: 2100000, guid: f48c90dc3ffd6e744adff44c4048a07d, type: 2}

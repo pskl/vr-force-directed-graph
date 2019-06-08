@@ -13,9 +13,11 @@ Material:
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
+  m_CustomRenderQueue: 3000
+  stringTagMap:
+    RenderType: Transparent
+  disabledShaderPasses:
+  - SHADOWCASTER
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -40,18 +42,18 @@ Material:
     - _Blend: 0
     - _Cull: 2
     - _Cutoff: 0.5
-    - _DstBlend: 0
+    - _DstBlend: 10
     - _MKGlowOffSet: 0
     - _MKGlowPower: 5
     - _MKGlowTexStrength: 0
     - _Outline: 0.0105
     - _RimPower: 5
     - _SampleGI: 0
-    - _SrcBlend: 1
-    - _Surface: 0
-    - _ZWrite: 1
+    - _SrcBlend: 5
+    - _Surface: 1
+    - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 0.172}
+    - _Color: {r: 0.7607843, g: 0.7607843, b: 0.7607843, a: 1}
     - _MKGlowColor: {r: 0.8235294, g: 0.9780933, b: 1, a: 1}
     - _MKGlowTexColor: {r: 0.0072448165, g: 0.90435207, b: 0.9852941, a: 1}
     - _OutlineColor: {r: 1, g: 0, b: 0, a: 1}

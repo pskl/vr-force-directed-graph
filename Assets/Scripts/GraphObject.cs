@@ -5,13 +5,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public abstract class GraphObject : MonoBehaviour,
+public abstract class GraphObject : Basic,
     IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     public Graph graph;
     public bool hidden;
     public bool highlighted;
-    
+
     public virtual void Hide()
     {
 		hidden = true;
@@ -22,7 +22,7 @@ public abstract class GraphObject : MonoBehaviour,
         hidden = false;
     }
 
-    public virtual void Update()
+    public override void Update()
     {
         UpdatePosition();
         UpdateAppearance();
@@ -71,4 +71,9 @@ public abstract class GraphObject : MonoBehaviour,
 	}
 
 	#endregion events
+
+    public virtual void OnDestroy()
+    {
+        
+    }
 }
