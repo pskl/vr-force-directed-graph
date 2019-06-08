@@ -155,14 +155,14 @@ MonoBehaviour:
   edgePrefab: {fileID: 1000010070264676, guid: bffd6863c960bbd4ca4113dd5bb46741, type: 3}
   grabLeft: {fileID: 0}
   grabRight: {fileID: 0}
-  initialGrabDistance: 0
+  initialGrabDistance: 1
   ripFactor: 1.5
   center: {fileID: 1383499143}
-  repulsion: 0.5
-  attraction: 1.5
-  springLength: 0.05
-  damping: 0.005
-  masterSpeed: 0.2
+  gravity: 20
+  scale: 0.1
+  repulsionFactor: 20
+  attractionFactor: 5
+  speed: 0.001
   gameOver: 0
   gameOverThreshold: 0.1
   nodes: []
@@ -280,7 +280,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1383499143}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -321,8 +321,8 @@ Camera:
   m_GameObject: {fileID: 1787331950}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -363,7 +363,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1787331950}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: -1}
+  m_LocalPosition: {x: 0, y: 1.5, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
