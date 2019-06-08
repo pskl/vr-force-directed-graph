@@ -2,23 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Infection : MonoBehaviour
+public class Infection : Basic
 {
     public InfectionManager infectionManager;
     public Node node;
     public float timeOfInfection;
     public float infectionChance;
 
+
+    public override void Start()
+    {
+        base.Start();
+        Debug.Log("Start infection " + node.name);
+        InvokeRepeating("InfectionImpulse", 0.1f, 1.0f);
+    }
+    
     public void InfectionImpulse()
     {
-        if (Time.time - timeOfInfection > infectionManager.incubation)
+        Debug.Log(name + " sends Infection impulses");
+        foreach (Edge e in node.attractionlist)
         {
-            foreach (Edge e in node.attractionlist)
-            {
-                e.endangered = true;
-                e.Other(node).endangered = true;
-                e.Other(node).CheckForInfection(this);
-            }
+            e.Other(node).CheckForInfection(this);
         }
     }
 }

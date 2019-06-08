@@ -1,20 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GraphImporter : MonoBehaviour
+public class GraphImporter : Basic
 {
-    public static GraphImporter instance;
     public Graph graph;
     public TextAsset miserables;
     public TextAsset miserablesEdges;
     public TextAsset miserablesNodes;
 
-    public void Awake()
+    public override void Awake()
     {
-        instance = this;
         Import();
     }
-
 
     public void Import()
     {
@@ -22,11 +19,6 @@ public class GraphImporter : MonoBehaviour
 
         ImportNodes(miserablesNodes.text.Split(archdelim));
         ImportEdges(miserablesEdges.text.Split(archdelim));
-
-        foreach (Node n in graph.nodes)
-        {
-            n.RefreshRepulsionList();
-        }
     }
 
     protected void ImportNodes(string[] tableNodes)
@@ -66,7 +58,11 @@ public class GraphImporter : MonoBehaviour
             float parseWeight;
             if (float.TryParse(values[2], out parseWeight))
             {
-                graph.CreateEdge(FindNode(graph, values[0]), FindNode(graph, values[1]), parseWeight);
+                graph.CreateEdge(
+                    FindNode(graph, values[0]), 
+                    FindNode(graph, values[1]), 
+                    parseWeight
+                );
             }
         }
     }

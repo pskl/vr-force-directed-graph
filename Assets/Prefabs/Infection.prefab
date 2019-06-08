@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d34e21aa672a5cb43952eb2da630ef71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  infectionManager: {fileID: 0}
   node: {fileID: 0}
-  infected: 0
   timeOfInfection: 0
+  infectionChance: 0.1

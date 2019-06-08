@@ -4,46 +4,37 @@ using UnityEngine;
 
 using System.Linq;
 
-public class InfectionManager : MonoBehaviour
+public class InfectionManager : Basic
 {
     public Graph graph;
     public GameObject infectionPrefab;
-    
-    public int incubation;
 
     public List<Infection> infections = new List<Infection>();
     public List<Node> evilNodes = new List<Node>();
 
     public Node evilMaster;
 
-    // Update is called once per frame
-    void Update()
+
+    public override void Update()
     {
         if(Input.GetKeyDown(KeyCode.Return))
         {
             RandomInfection();
         }
-
-        foreach(Infection infection in infections)
-        {
-            infection.InfectionImpulse();
-        }
     }
 
     public void RandomInfection()
     {
-        Node firstnode = graph.nodes.First();
-
         List<Node> possibleNodes = graph.nodes.
+            Where(x=>!x.infection).
             OrderBy(x => x.attractionlist.Count).
-            Where(x => x.attractionlist.Count == firstnode.attractionlist.Count).
             ToList();
 
         Node infectionCandidate = possibleNodes[Random.Range(0, possibleNodes.Count - 1)];
         infectionCandidate.BecomeInfected();
     }
 
-    public Infection InstantiateInfection(Node node, float time)
+    public Infection InstantiateInfection(Node node)
     {
         GameObject newInfectionGO = GameObject.Instantiate(infectionPrefab) as GameObject;
         newInfectionGO.transform.SetParent(node.transform);
@@ -52,7 +43,7 @@ public class InfectionManager : MonoBehaviour
 
         newInfection.node = node;
         node.infection = newInfection;
-        newInfection.timeOfInfection = time;
+        newInfection.timeOfInfection = Time.time;
 
         infections.Add(newInfection);
 
